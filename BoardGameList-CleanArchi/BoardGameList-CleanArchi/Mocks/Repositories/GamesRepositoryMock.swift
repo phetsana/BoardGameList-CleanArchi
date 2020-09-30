@@ -8,6 +8,7 @@
 import Foundation
 import Combine
 
+#if DEBUG
 struct GamesRepositoryMock: GamesRepository {
 
     static func game1() -> GameItem {
@@ -55,3 +56,4 @@ struct GamesRepositoryMock: GamesRepository {
             .eraseToAnyPublisher()
     }
 }
+#endif

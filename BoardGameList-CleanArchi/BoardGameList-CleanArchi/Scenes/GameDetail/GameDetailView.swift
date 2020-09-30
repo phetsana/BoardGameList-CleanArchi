@@ -85,11 +85,12 @@ extension GameDetailView {
 }
 
 struct GameDetailView_Previews: PreviewProvider {
-
+    #if DEBUG
     static var previews: some View {
         Group {
             GameDetailView.makeMock()
                 .previewDisplayName("Detail view")
         }
     }
+    #endif
 }

@@ -8,6 +8,7 @@
 import Foundation
 import Combine
 
+#if DEBUG
 final class NetworkingServiceMock: BoardGameAtlasNetworkingServiceImpl {
     let error: NetworkingError?
     let isLoading: Bool
@@ -26,3 +27,4 @@ final class NetworkingServiceMock: BoardGameAtlasNetworkingServiceImpl {
             .delay(for: isLoading ? .seconds(Int.max) : .zero, scheduler: RunLoop.main).eraseToAnyPublisher()
     }
 }
+#endif

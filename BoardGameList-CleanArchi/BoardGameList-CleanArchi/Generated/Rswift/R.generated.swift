@@ -105,36 +105,6 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 3 files.
-  struct file {
-    /// Resource file `Development.xcconfig`.
-    static let developmentXcconfig = Rswift.FileResource(bundle: R.hostingBundle, name: "Development", pathExtension: "xcconfig")
-    /// Resource file `Production.xcconfig`.
-    static let productionXcconfig = Rswift.FileResource(bundle: R.hostingBundle, name: "Production", pathExtension: "xcconfig")
-    /// Resource file `Staging.xcconfig`.
-    static let stagingXcconfig = Rswift.FileResource(bundle: R.hostingBundle, name: "Staging", pathExtension: "xcconfig")
-
-    /// `bundle.url(forResource: "Development", withExtension: "xcconfig")`
-    static func developmentXcconfig(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.developmentXcconfig
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "Production", withExtension: "xcconfig")`
-    static func productionXcconfig(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.productionXcconfig
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "Staging", withExtension: "xcconfig")`
-    static func stagingXcconfig(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.stagingXcconfig
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    fileprivate init() {}
-  }
-
   /// This `R.info` struct is generated, and contains static references to 1 properties.
   struct info {
     struct uiApplicationSceneManifest {
