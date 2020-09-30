@@ -13,9 +13,6 @@
 		9BA1DBB9252502F9000185A5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BA1DBB8252502F9000185A5 /* Preview Assets.xcassets */; };
 		9BA1DBC4252502F9000185A5 /* BoardGameList_CleanArchiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA1DBC3252502F9000185A5 /* BoardGameList_CleanArchiTests.swift */; };
 		9BA1DBEE2525036F000185A5 /* Environments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA1DBE72525036F000185A5 /* Environments.swift */; };
-		9BA1DBEF2525036F000185A5 /* Staging.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 9BA1DBE92525036F000185A5 /* Staging.xcconfig */; };
-		9BA1DBF02525036F000185A5 /* Development.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 9BA1DBEB2525036F000185A5 /* Development.xcconfig */; };
-		9BA1DBF12525036F000185A5 /* Production.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 9BA1DBED2525036F000185A5 /* Production.xcconfig */; };
 		9BA1DC0B2525038E000185A5 /* NetworkingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA1DBFA2525038E000185A5 /* NetworkingRequest.swift */; };
 		9BA1DC0C2525038E000185A5 /* NetworkingServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA1DBFB2525038E000185A5 /* NetworkingServiceImpl.swift */; };
 		9BA1DC0D2525038E000185A5 /* NetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA1DBFC2525038E000185A5 /* NetworkingError.swift */; };
@@ -31,7 +28,7 @@
 		9BA1DC2725250538000185A5 /* GamesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA1DC2625250538000185A5 /* GamesListView.swift */; };
 		9BA1DC2B25250598000185A5 /* GamesListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA1DC2A25250598000185A5 /* GamesListInteractor.swift */; };
 		9BA1DC2F252505A1000185A5 /* GamesListAppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA1DC2E252505A1000185A5 /* GamesListAppState.swift */; };
-		9BA1DC33252505D3000185A5 /* GamesListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA1DC32252505D3000185A5 /* GamesListRepository.swift */; };
+		9BA1DC33252505D3000185A5 /* GamesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA1DC32252505D3000185A5 /* GamesRepository.swift */; };
 		9BA1DC39252505E8000185A5 /* GetGamesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA1DC37252505E8000185A5 /* GetGamesRequest.swift */; };
 		9BA1DC3A252505E8000185A5 /* GameDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA1DC38252505E8000185A5 /* GameDTO.swift */; };
 		9BA1DC472525079D000185A5 /* GameItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA1DC462525079D000185A5 /* GameItem.swift */; };
@@ -42,6 +39,8 @@
 		9BA1DC85252512B3000185A5 /* GameDetailAppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA1DC84252512B3000185A5 /* GameDetailAppState.swift */; };
 		9BA1DC89252512C0000185A5 /* GameDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA1DC88252512C0000185A5 /* GameDetailInteractor.swift */; };
 		9BA1DC93252514EB000185A5 /* GameItemDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA1DC92252514EB000185A5 /* GameItemDetail.swift */; };
+		9BA1DCAA2525251C000185A5 /* GamesRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA1DCA92525251C000185A5 /* GamesRepositoryMock.swift */; };
+		9BDB804825252F01001FECE2 /* NetworkingServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDB804725252F01001FECE2 /* NetworkingServiceMock.swift */; };
 		B43E86DF3C2A5E898C285086 /* Pods_BoardGameList_CleanArchi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C0D974F3C4A378811221791 /* Pods_BoardGameList_CleanArchi.framework */; };
 		F44F3B00D782F920A2E9D36E /* Pods_BoardGameList_CleanArchiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4584D28B383645D8A408B86C /* Pods_BoardGameList_CleanArchiTests.framework */; };
 /* End PBXBuildFile section */
@@ -99,7 +98,7 @@
 		9BA1DC2625250538000185A5 /* GamesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesListView.swift; sourceTree = "<group>"; };
 		9BA1DC2A25250598000185A5 /* GamesListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesListInteractor.swift; sourceTree = "<group>"; };
 		9BA1DC2E252505A1000185A5 /* GamesListAppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesListAppState.swift; sourceTree = "<group>"; };
-		9BA1DC32252505D3000185A5 /* GamesListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesListRepository.swift; sourceTree = "<group>"; };
+		9BA1DC32252505D3000185A5 /* GamesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesRepository.swift; sourceTree = "<group>"; };
 		9BA1DC37252505E8000185A5 /* GetGamesRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetGamesRequest.swift; sourceTree = "<group>"; };
 		9BA1DC38252505E8000185A5 /* GameDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameDTO.swift; sourceTree = "<group>"; };
 		9BA1DC462525079D000185A5 /* GameItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameItem.swift; sourceTree = "<group>"; };
@@ -110,6 +109,8 @@
 		9BA1DC84252512B3000185A5 /* GameDetailAppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailAppState.swift; sourceTree = "<group>"; };
 		9BA1DC88252512C0000185A5 /* GameDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailInteractor.swift; sourceTree = "<group>"; };
 		9BA1DC92252514EB000185A5 /* GameItemDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameItemDetail.swift; sourceTree = "<group>"; };
+		9BA1DCA92525251C000185A5 /* GamesRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesRepositoryMock.swift; sourceTree = "<group>"; };
+		9BDB804725252F01001FECE2 /* NetworkingServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingServiceMock.swift; sourceTree = "<group>"; };
 		A370D09039CC3CF13CF201E8 /* Pods-BoardGameList-CleanArchiTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoardGameList-CleanArchiTests.debug.xcconfig"; path = "Target Support Files/Pods-BoardGameList-CleanArchiTests/Pods-BoardGameList-CleanArchiTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AB1CA6E18A74D78094AA4980 /* Pods-BoardGameList-CleanArchi.release (staging).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoardGameList-CleanArchi.release (staging).xcconfig"; path = "Target Support Files/Pods-BoardGameList-CleanArchi/Pods-BoardGameList-CleanArchi.release (staging).xcconfig"; sourceTree = "<group>"; };
 		D320074F356BE476375AAF75 /* Pods-BoardGameList-CleanArchi.debug (development).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoardGameList-CleanArchi.debug (development).xcconfig"; path = "Target Support Files/Pods-BoardGameList-CleanArchi/Pods-BoardGameList-CleanArchi.debug (development).xcconfig"; sourceTree = "<group>"; };
@@ -198,6 +199,7 @@
 				9BA1DBF52525038E000185A5 /* Globals */,
 				9BA1DBBA252502F9000185A5 /* Info.plist */,
 				9BA1DC8C252512F6000185A5 /* Domain */,
+				9BDB804525252EAE001FECE2 /* Mocks */,
 				9BA1DC23252504FF000185A5 /* Scenes */,
 				9BA1DBB7252502F9000185A5 /* Preview Content */,
 			);
@@ -343,8 +345,8 @@
 		9BA1DC23252504FF000185A5 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				9BA1DC252525051B000185A5 /* GameDetail */,
 				9BA1DC2425250510000185A5 /* GamesList */,
+				9BA1DC252525051B000185A5 /* GameDetail */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -417,24 +419,49 @@
 			children = (
 				9BA1DC9825251692000185A5 /* Networking */,
 				9BA1DC36252505E8000185A5 /* Requests */,
-				9BA1DC8D25251300000185A5 /* Interactors */,
+				9BA1DC8D25251300000185A5 /* Repositories */,
 				9BA1DC452525078A000185A5 /* Models */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
 		};
-		9BA1DC8D25251300000185A5 /* Interactors */ = {
+		9BA1DC8D25251300000185A5 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				9BA1DC32252505D3000185A5 /* GamesListRepository.swift */,
+				9BA1DC32252505D3000185A5 /* GamesRepository.swift */,
 			);
-			path = Interactors;
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 		9BA1DC9825251692000185A5 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
 				9BA1DBFE2525038E000185A5 /* BoardGameAtlasNetworkingServiceImpl.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		9BDB804525252EAE001FECE2 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				9BDB804B252533A0001FECE2 /* Networking */,
+				9BDB804625252EB3001FECE2 /* Repositories */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		9BDB804625252EB3001FECE2 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				9BA1DCA92525251C000185A5 /* GamesRepositoryMock.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		9BDB804B252533A0001FECE2 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				9BDB804725252F01001FECE2 /* NetworkingServiceMock.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -527,9 +554,6 @@
 			files = (
 				9BA1DBB9252502F9000185A5 /* Preview Assets.xcassets in Resources */,
 				9BA1DC6E25250BE2000185A5 /* Localizable.strings in Resources */,
-				9BA1DBF12525036F000185A5 /* Production.xcconfig in Resources */,
-				9BA1DBEF2525036F000185A5 /* Staging.xcconfig in Resources */,
-				9BA1DBF02525036F000185A5 /* Development.xcconfig in Resources */,
 				9BA1DBB6252502F9000185A5 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -673,13 +697,14 @@
 				9BA1DBB4252502F8000185A5 /* ContentView.swift in Sources */,
 				9BA1DC93252514EB000185A5 /* GameItemDetail.swift in Sources */,
 				9BA1DC2725250538000185A5 /* GamesListView.swift in Sources */,
+				9BDB804825252F01001FECE2 /* NetworkingServiceMock.swift in Sources */,
 				9BA1DC0B2525038E000185A5 /* NetworkingRequest.swift in Sources */,
 				9BA1DC0E2525038E000185A5 /* NetworkingService.swift in Sources */,
 				9BA1DC39252505E8000185A5 /* GetGamesRequest.swift in Sources */,
 				9BA1DC152525038E000185A5 /* Spinner.swift in Sources */,
 				9BA1DC0D2525038E000185A5 /* NetworkingError.swift in Sources */,
 				9BA1DC122525038E000185A5 /* ImageCache.swift in Sources */,
-				9BA1DC33252505D3000185A5 /* GamesListRepository.swift in Sources */,
+				9BA1DC33252505D3000185A5 /* GamesRepository.swift in Sources */,
 				9BA1DC7B25250CAD000185A5 /* R.generated.swift in Sources */,
 				9BA1DC102525038E000185A5 /* Error+Equality.swift in Sources */,
 				9BA1DC7F252512A6000185A5 /* GameDetailView.swift in Sources */,
@@ -690,6 +715,7 @@
 				9BA1DC142525038E000185A5 /* RemoteImage.swift in Sources */,
 				9BA1DC3A252505E8000185A5 /* GameDTO.swift in Sources */,
 				9BA1DC162525038E000185A5 /* AutoEquatable.swift in Sources */,
+				9BA1DCAA2525251C000185A5 /* GamesRepositoryMock.swift in Sources */,
 				9BA1DBB2252502F8000185A5 /* BoardGameList_CleanArchiApp.swift in Sources */,
 				9BA1DC7725250CA4000185A5 /* AutoEquatable.generated.swift in Sources */,
 				9BA1DC0F2525038E000185A5 /* BoardGameAtlasNetworkingServiceImpl.swift in Sources */,
@@ -818,6 +844,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -829,6 +856,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";

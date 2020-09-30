@@ -9,5 +9,9 @@ import Foundation
 import Combine
 
 class GameDetailAppState: ObservableObject {
-    @Published var game: GameItemDetail?
+    @Published var game: GameItemDetail
+    
+    init(game: GameItemDetail) {
+        self.game = game
+    }
 }

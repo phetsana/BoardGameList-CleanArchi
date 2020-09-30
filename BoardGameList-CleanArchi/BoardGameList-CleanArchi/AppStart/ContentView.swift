@@ -9,11 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        let appState = GamesListAppState()
-        let repository = GamesListRepositoryImpl(networkingService: BoardGameAtlasNetworkingServiceImpl())
-        let interactor = GamesListInteractorImpl(gamesListRepository: repository, appState: appState)
-        return GamesListView(interactor: interactor)
-            .environmentObject(appState)
+        return GamesListView.make()
     }
 }
 

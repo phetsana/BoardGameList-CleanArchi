@@ -21,24 +21,24 @@ struct GamesListView: View {
     }
     
     private var content: some View {
-        if appState.games.isEmpty {
+        switch appState.gamesState {
+        case .loading:
             return Spinner(isAnimating: true, style: .medium).eraseToAnyView()
+        case .error(let error):
+            return Text(error.localizedDescription).eraseToAnyView()
+        case .loaded(let games):
+            return list(games: games).eraseToAnyView()
         }
-        
-        return list()
-            .eraseToAnyView()
     }
 
-    private func list() -> some View {
-        return List(appState.games) { game in
-            let appState = GameDetailAppState()
-            let interactor = GameDetailInteractorImpl(game: game, appState: appState)
+    private func list(games: [GameItem]) -> some View {
+        return List(games) { game in
             NavigationLink(
-                destination: GameDetailView(interactor: interactor)
-                    .environmentObject(appState),
+                destination: GameDetailView.make(game: game),
                 label: {
                     GamesListView.Row(game: game)
-                })
+                }
+            )
         }
     }
 }
@@ -68,8 +68,48 @@ extension GamesListView {
     }
 }
 
-struct GamesListView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+extension GamesListView {
+    static func make() -> some View {
+        let appState = GamesListAppState()
+        let repository = GamesRepositoryImpl(networkingService: BoardGameAtlasNetworkingServiceImpl())
+        let interactor = GamesListInteractorImpl(gamesRepository: repository, appState: appState)
+        return GamesListView(interactor: interactor)
+            .environmentObject(appState)
     }
+
+    static func makeMock(state: GamesListState) -> some View {
+        let appState = GamesListAppState()
+        var repositoryMock: GamesRepository
+        switch state {
+        case .loading:
+            let networkingServiceMock = NetworkingServiceMock(isLoading: true)
+            repositoryMock = GamesRepositoryImpl(networkingService: networkingServiceMock)
+        case .error(let error):
+            let networkingError = NetworkingError.other(error)
+            let networkingServiceMock = NetworkingServiceMock(error: networkingError)
+            repositoryMock = GamesRepositoryImpl(networkingService: networkingServiceMock)
+        case .loaded(let games):
+            repositoryMock = GamesRepositoryMock(games: games)
+        }
+        let interactor = GamesListInteractorImpl(gamesRepository: repositoryMock, appState: appState)
+        return GamesListView(interactor: interactor)
+            .environmentObject(appState)
+    }
+}
+
+struct GamesListView_Previews: PreviewProvider {
+
+    static var previews: some View {
+        Group {
+            GamesListView.makeMock(state: .loading)
+                .previewDisplayName("Loading")
+            GamesListView.makeMock(state: .error(NetworkingError.endpoint))
+                .previewDisplayName("Error")
+            GamesListView.makeMock(state: .loaded([]))
+                .previewDisplayName("Empty list")
+            GamesListView.makeMock(state: .loaded(GamesRepositoryMock.gamesMock()))
+                .previewDisplayName("Games list")
+        }
+    }
+
 }

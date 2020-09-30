@@ -12,7 +12,7 @@ struct BoardGameAtlasConstants {
     static let clientID = Environments.clientID
 }
 
-final class BoardGameAtlasNetworkingServiceImpl: NetworkingServiceImpl {
+class BoardGameAtlasNetworkingServiceImpl: NetworkingServiceImpl {
     init() {
         super.init(baseURL: BoardGameAtlasConstants.baseURL)
     }

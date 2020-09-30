@@ -1,5 +1,5 @@
 //
-//  GamesListRepository.swift
+//  GamesRepository.swift
 //  BoardGameList-CleanArchi
 //
 //  Created by Phetsana PHOMMARINH on 30/09/2020.
@@ -8,11 +8,11 @@
 import Foundation
 import Combine
 
-protocol GamesListRepository {
+protocol GamesRepository {
     func loadGames() -> AnyPublisher<[GameItem], Error>
 }
 
-struct GamesListRepositoryImpl: GamesListRepository {
+struct GamesRepositoryImpl: GamesRepository {
     
     let networkingService: NetworkingService
     

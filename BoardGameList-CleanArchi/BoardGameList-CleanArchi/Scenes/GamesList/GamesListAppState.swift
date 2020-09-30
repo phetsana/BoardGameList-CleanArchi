@@ -8,6 +8,12 @@
 import Foundation
 import Combine
 
+enum GamesListState {
+    case loading
+    case error(Error)
+    case loaded([GameItem])
+}
+
 class GamesListAppState: ObservableObject {
-    @Published var games: [GameItem] = []
+    @Published var gamesState: GamesListState = .loading
 }

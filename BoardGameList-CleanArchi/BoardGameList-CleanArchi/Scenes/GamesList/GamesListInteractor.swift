@@ -13,14 +13,14 @@ protocol GamesListInteractor {
 }
 
 class GamesListInteractorImpl: GamesListInteractor {
-    let gamesListRepository: GamesListRepository
+    let gamesRepository: GamesRepository
     let appState: GamesListAppState
     
     private var subscriptions = Set<AnyCancellable>()
     
-    init(gamesListRepository: GamesListRepository,
+    init(gamesRepository: GamesRepository,
          appState: GamesListAppState) {
-        self.gamesListRepository = gamesListRepository
+        self.gamesRepository = gamesRepository
         self.appState = appState
     }
     
@@ -30,12 +30,15 @@ class GamesListInteractorImpl: GamesListInteractor {
     }
     
     func loadGames() {
-        gamesListRepository
+        appState.gamesState = .loading
+        gamesRepository
             .loadGames()
-            .sink { (_) in
-                
+            .sink { [weak self] (completion) in
+                if case let .failure(error) = completion {
+                    self?.appState.gamesState = .error(error)
+                }
             } receiveValue: { [weak self] (games) in
-                self?.appState.games = games
+                self?.appState.gamesState = .loaded(games)
             }
             .store(in: &subscriptions)
     }
