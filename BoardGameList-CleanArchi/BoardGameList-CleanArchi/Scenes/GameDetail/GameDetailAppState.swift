@@ -8,10 +8,11 @@
 import Foundation
 import Combine
 
+enum GameDetailState: AutoEquatable {
+    case loading
+    case loaded(GameItemDetail)
+}
+
 class GameDetailAppState: ObservableObject {
-    @Published var game: GameItemDetail
-    
-    init(game: GameItemDetail) {
-        self.game = game
-    }
+    @Published var gameState: GameDetailState = .loading
 }

@@ -17,16 +17,30 @@ struct GameDetailView: View {
 
     var body: some View {
         content
-            .navigationTitle(appState.game.name ?? "")
+            .navigationTitle(navigationTitle)
             .onAppear { interactor.loadGame() }
     }
 
-    private var content: some View {
-        return ScrollView {
-            GameDetailView.Content(game: appState.game)
-                .padding(20)
+    private var navigationTitle: String {
+        switch appState.gameState {
+        case .loading:
+            return ""
+        case .loaded(let game):
+            return game.name ?? ""
         }
-        .eraseToAnyView()
+    }
+    
+    private var content: some View {
+        switch appState.gameState {
+        case .loading:
+            return Spinner(isAnimating: true, style: .medium).eraseToAnyView()
+        case .loaded(let game):
+            return ScrollView {
+                GameDetailView.Content(game: game)
+                    .padding(20)
+            }
+            .eraseToAnyView()
+        }
     }
 }
 
@@ -69,7 +83,7 @@ extension GameDetailView {
 
 extension GameDetailView {
     static func make(game: GameItem) -> some View {
-        let appState = GameDetailAppState(game: GameItemDetail(game: game))
+        let appState = GameDetailAppState()
         let interactor = GameDetailInteractorImpl(game: game, appState: appState)
         return GameDetailView(interactor: interactor)
                 .environmentObject(appState)
@@ -77,7 +91,7 @@ extension GameDetailView {
     
     static func makeMock() -> some View {
         let game = GamesRepositoryMock.game2()
-        let appState = GameDetailAppState(game: GameItemDetail(game: game))
+        let appState = GameDetailAppState()
         let interactor = GameDetailInteractorImpl(game: game, appState: appState)
         return GameDetailView(interactor: interactor)
                 .environmentObject(appState)

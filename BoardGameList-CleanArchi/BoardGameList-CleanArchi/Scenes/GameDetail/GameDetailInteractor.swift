@@ -23,6 +23,6 @@ class GameDetailInteractorImpl: GameDetailInteractor {
     }
 
     func loadGame() {
-        self.appState.game = self.game
+        self.appState.gameState = .loaded(game)
     }
 }

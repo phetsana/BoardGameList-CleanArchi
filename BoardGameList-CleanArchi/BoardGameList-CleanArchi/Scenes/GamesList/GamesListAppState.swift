@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-enum GamesListState {
+enum GamesListState: AutoEquatable {
     case loading
     case error(Error)
     case loaded([GameItem])
