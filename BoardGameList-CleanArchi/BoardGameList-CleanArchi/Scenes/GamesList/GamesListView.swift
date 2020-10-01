@@ -97,8 +97,8 @@ extension GamesListView {
     }
 }
 
+#if DEBUG
 struct GamesListView_Previews: PreviewProvider {
-    #if DEBUG
     static var previews: some View {
         Group {
             GamesListView.makeMock(state: .loading)
@@ -111,5 +111,5 @@ struct GamesListView_Previews: PreviewProvider {
                 .previewDisplayName("Games list")
         }
     }
-    #endif
 }
+#endif
