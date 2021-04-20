@@ -36,4 +36,5 @@ jobs:
           echo test, and deploy your project.
           cd BoardGameList-CleanArchi
           bundle install
+          bundle exec pod install
           bundle exec fastlane tests
