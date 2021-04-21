@@ -36,6 +36,6 @@ jobs:
       - name: Checkout tools repo
         uses: actions/checkout@v2
         with:
-          repository: phetsana/BoardGameList-ViewState          
+          repository: Kannelle-io/knl-sdk-ios       
           # token: ${{ secrets.ACCESS_TOKEN }}
    
