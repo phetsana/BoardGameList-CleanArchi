@@ -38,5 +38,5 @@ jobs:
         with:
           repository: Kannelle-io/knl-sdk-ios       
           path: develop
-          # token: ${{ secrets.ACCESS_TOKEN }}
+          token: ${{ secrets.ACCESS_TOKEN }}
    
