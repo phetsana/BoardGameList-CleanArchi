@@ -32,6 +32,7 @@ jobs:
            echo Hello, world!
            echo "secret"
            echo ${{ secrets.TEST_TOKEN }}
+           echo "toto"
    
       - name: Checkout tools repo
         uses: actions/checkout@v2
