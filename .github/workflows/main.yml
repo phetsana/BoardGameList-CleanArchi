@@ -34,6 +34,6 @@ jobs:
       - name: Checkout tools repo
         uses: actions/checkout@v2
         with:
-          repository: Kannelle-io/knl-sdk-ios.git 
+          repository: Kannelle-io/knl-sdk-ios
           token: ${{ secrets.ACCESS_TOKEN }}
    
