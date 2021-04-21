@@ -31,7 +31,7 @@ jobs:
         run: |
            echo Hello, world!
            echo "secret"
-           echo ${{ secrets.ACCESS_TOKEN }}
+           echo ${{ secrets.TEST_TOKEN }}
    
       - name: Checkout tools repo
         uses: actions/checkout@v2
