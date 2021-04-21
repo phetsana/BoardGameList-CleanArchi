@@ -31,7 +31,8 @@ jobs:
         run: |
            echo Hello, world!
    
-      - uses: actions/checkout@v2
+      - name: Checkout tools repo
+        uses: actions/checkout@v2
         with:
           repository: Kannelle-io/knl-sdk-ios.git 
           token: ${{ secrets.ACCESS_TOKEN }}
