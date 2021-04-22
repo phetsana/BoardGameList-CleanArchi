@@ -51,6 +51,5 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: Kannelle-io/knl-sdk-ios       
-          path: develop
-          token: "$ACCESS_TOKEN"
+          token: ${{ secrets.ACCESS_TOKEN }}
    
