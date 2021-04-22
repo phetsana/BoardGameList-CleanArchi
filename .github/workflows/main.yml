@@ -31,6 +31,7 @@ jobs:
         env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           TEST_TOKEN: ${{ secrets.TEST_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
            echo Hello, world!
            echo "secret"
