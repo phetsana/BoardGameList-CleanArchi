@@ -27,25 +27,17 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
         with:
-          path: knl-app
+          path: main
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        
-        env:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          TEST_TOKEN: ${{ secrets.TEST_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          TEST_VAR: "toto test var"
-          REPO_TOKEN: ${{ secrets.REPO_TOKEN }}
-        run: |
-           echo Hello, world!
-           echo "secret"
-           echo ${{ secrets.TEST_TOKEN }}
-           echo "toto"
-           echo $TEST_VAR
-           echo "toto2"
-           
+
+      - name: Checkout repo knl-app
+        uses: actions/checkout@v2
+        with:
+          repository: Kannelle-io/knl-app
+          ref: test-tag-2
+          path: knl-app
+          token: ${{ secrets.KANNELLE_PAT }}
+          
       - name: Checkout repo knl-sdk-ios
         uses: actions/checkout@v2
         with:
@@ -61,9 +53,19 @@ jobs:
           ref: 3.0.1
           path: knl-sdk-ios-rn 
           token: ${{ secrets.KANNELLE_PAT }}
-      
+          
       - name: Setup bundle env
-        run: |   
-          echo $PWD
-          echo $(ls)       
+        run: |          
+          cd knl-app/ios          
+          bundle install
+      
+      - name: Fastlane match
+        run: |          
+          cd knl-app/ios  
+          bundle exec fastlane match appstore --readonly
+      
+      - name: Fastlane release staging
+        run: |          
+          cd knl-app/ios  
+          bundle exec fastlane release --env staging
    
