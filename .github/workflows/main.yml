@@ -36,6 +36,7 @@ jobs:
            echo "secret"
            echo ${{ secrets.TEST_TOKEN }}
            echo "toto"
+           git clone https://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@github.com/Kannelle-io/knl-sdk-ios.git
    
       - name: Checkout tools repo
         env:
