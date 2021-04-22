@@ -52,6 +52,6 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: Kannelle-io/knl-sdk-ios     
-          path: refs/tags/3.0.1
+          ref: 3.0.1
           token: ${{ secrets.KANNELLE_PAT }}
    
