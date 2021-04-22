@@ -31,13 +31,11 @@ jobs:
         env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           TEST_TOKEN: ${{ secrets.TEST_TOKEN }}
-          super_secret: ${{ secrets.TEST_TOKEN }}
         run: |
            echo Hello, world!
            echo "secret"
            echo ${{ secrets.TEST_TOKEN }}
            echo "toto"
-           echo ${{ TEST_TOKEN }}
            echo "toto2"
 
       - name: Checkout tools repo
