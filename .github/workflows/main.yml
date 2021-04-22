@@ -28,17 +28,18 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        env:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          TEST_TOKEN: ${{ secrets.TEST_TOKEN }}
-          super_secret: ${{ secrets.TEST_TOKEN }}
         run: |
            echo Hello, world!
            echo "secret"
            echo ${{ secrets.TEST_TOKEN }}
            echo "toto"
-           git clone https://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@github.com/Kannelle-io/knl-sdk-ios.git
-   
+           echo ${{ TEST_TOKEN }}
+           echo "toto2"
+        env:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          TEST_TOKEN: ${{ secrets.TEST_TOKEN }}
+          super_secret: ${{ secrets.TEST_TOKEN }}
+
       - name: Checkout tools repo
         env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
