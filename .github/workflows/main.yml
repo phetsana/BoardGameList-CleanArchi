@@ -33,6 +33,7 @@ jobs:
           TEST_TOKEN: ${{ secrets.TEST_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TEST_VAR: "toto test var"
+          REPO_TOKEN: ${{ secrets.REPO_TOKEN }}
         run: |
            echo Hello, world!
            echo "secret"
