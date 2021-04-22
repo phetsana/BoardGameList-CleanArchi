@@ -48,8 +48,9 @@ jobs:
         env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           TEST_TOKEN: ${{ secrets.TEST_TOKEN }}
+          KANNELLE_PAT: ${{ secrets.KANNELLE_PAT }}
         uses: actions/checkout@v2
         with:
           repository: Kannelle-io/knl-sdk-ios       
-          token: ${{ secrets.ACCESS_TOKEN }}
+          token: ${{ secrets.KANNELLE_PAT }}
    
