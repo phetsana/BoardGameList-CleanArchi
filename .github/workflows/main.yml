@@ -28,6 +28,10 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
+        env:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          TEST_TOKEN: ${{ secrets.TEST_TOKEN }}
+          super_secret: ${{ secrets.TEST_TOKEN }}
         run: |
            echo Hello, world!
            echo "secret"
@@ -35,10 +39,6 @@ jobs:
            echo "toto"
            echo ${{ TEST_TOKEN }}
            echo "toto2"
-        env:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          TEST_TOKEN: ${{ secrets.TEST_TOKEN }}
-          super_secret: ${{ secrets.TEST_TOKEN }}
 
       - name: Checkout tools repo
         env:
