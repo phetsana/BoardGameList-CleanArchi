@@ -67,5 +67,5 @@ jobs:
       - name: Fastlane release staging
         run: |          
           cd knl-app/ios  
-          bundle exec fastlane release --env staging
+          bundle exec fastlane archive --env staging
    
