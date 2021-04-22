@@ -26,6 +26,12 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
+      - name: Hello world action
+        with: # Set the secret as an input
+          super_secret: ${{ secrets.TEST_TOKEN }}
+        env: # Or as an environment variable
+          super_secret: ${{ secrets.TEST_TOKEN }}
+
       # Runs a single command using the runners shell
       - name: Run a one-line script
         env:
