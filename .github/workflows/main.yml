@@ -32,11 +32,13 @@ jobs:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           TEST_TOKEN: ${{ secrets.TEST_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TEST_VAR: "toto test var"
         run: |
            echo Hello, world!
            echo "secret"
            echo ${{ secrets.TEST_TOKEN }}
            echo "toto"
+           echo $TEST_VAR
            echo "toto2"
 
       - name: Checkout tools repo
@@ -47,5 +49,5 @@ jobs:
         with:
           repository: Kannelle-io/knl-sdk-ios       
           path: develop
-          token: $ACCESS_TOKEN
+          token: "$ACCESS_TOKEN"
    
