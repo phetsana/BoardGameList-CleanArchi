@@ -35,6 +35,8 @@ jobs:
           
       - name: Test
         run: |
+          echo $(PWD)
+          echo $(ls)
           REPO_URL="https://github.com/Kannelle-io/knl-sdk-ios.git"
           git -c http.$REPO_URL.extraHeader="Authorization: Basic ${{ secrets.KANNELLE_PAT_BASE64 }}" clone $REPO_URL
           git clone $REPO_URL
