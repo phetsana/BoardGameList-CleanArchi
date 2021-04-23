@@ -33,11 +33,6 @@ jobs:
         with:      
           node-version: '16'
 
-      - name: Git credentials for npm install
-        run: |
-          REPO_URL="ssh://git@github.com/Kannelle-io/react-native-simple-store.git"
-          git config --global --add ssh.$REPO_URL.extraHeader "Authorization: Basic ${{ secrets.KANNELLE_PAT_BASE64 }}"
-
       - name: Checkout repo knl-app
         uses: actions/checkout@v2
         with:
@@ -62,6 +57,11 @@ jobs:
           path: knl-sdk-ios-rn 
           token: ${{ secrets.KANNELLE_PAT }}
           
+      - name: Git credentials for npm install
+        run: |
+          REPO_URL="ssh://git@github.com/Kannelle-io/react-native-simple-store.git"
+          git config --global --add ssh.$REPO_URL.extraHeader "Authorization: Basic ${{ secrets.KANNELLE_PAT_BASE64 }}"    
+      
       - name: Setup bundle env
         run: |          
           cd knl-app/ios          
