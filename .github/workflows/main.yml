@@ -61,3 +61,13 @@ jobs:
           ref: 3.0.1
           path: knl-sdk-ios-rn 
           token: ${{ secrets.KANNELLE_PAT }}
+          
+      - name: Fastlane match
+        run: |          
+          cd knl-app/ios  
+          bundle exec fastlane match appstore --readonly
+      
+      - name: Fastlane release staging        
+        run: |          
+          cd knl-app/ios  
+          bundle exec fastlane archive --env staging
