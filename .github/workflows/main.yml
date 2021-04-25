@@ -32,3 +32,8 @@ jobs:
       - uses: actions/setup-node@v2
         with:      
           node-version: '16'
+          
+      - name: Git credentials for npm install
+        run: |
+          REPO_URL="ssh://git@github.com/Kannelle-io/react-native-simple-store.git"
+          git config --global --add ssh.$REPO_URL.extraHeader "Authorization: Basic ${{ secrets.KANNELLE_PAT_BASE64 }}"
