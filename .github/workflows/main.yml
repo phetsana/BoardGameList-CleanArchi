@@ -35,8 +35,8 @@ jobs:
           
       - name: Git credentials for npm install
         run: |
-          REPO_URL="ssh://git@github.com/Kannelle-io/react-native-simple-store.git"
-          git config --global --add ssh.$REPO_URL.extraHeader "Authorization: Basic ${{ secrets.KANNELLE_PAT_BASE64 }}"
-          git ls-remote ssh://git@github.com/Kannelle-io/react-native-simple-store.git
+          REPO_URL="hhtps://github.com/Kannelle-io/react-native-simple-store.git"
+          git config --global --add http.$REPO_URL.extraHeader "Authorization: Basic ${{ secrets.KANNELLE_PAT_BASE64 }}"
+          git ls-remote https://github.com/Kannelle-io/react-native-simple-store.git
           
       
