@@ -37,7 +37,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: Kannelle-io/knl-app
-          ref: test-phets-2
+          ref: test-phets-3
           path: knl-app
           token: ${{ secrets.KANNELLE_PAT }}
                  
@@ -56,6 +56,13 @@ jobs:
         run: |          
           cd knl-app/ios          
           bundle install
-
-      - name: tsc compile
-        uses: stepek/tsc-action@master
+          
+      - name: Fastlane match
+        run: |          
+          cd knl-app/ios  
+          bundle exec fastlane match appstore --readonly
+      
+      - name: Fastlane release staging        
+        run: |          
+          cd knl-app/ios  
+          bundle exec fastlane release --env staging
