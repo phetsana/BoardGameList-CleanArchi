@@ -31,31 +31,7 @@ jobs:
        
       - uses: actions/setup-node@v2
         with:      
-          node-version: '16'
-
-      - name: Checkout repo knl-app
-        uses: actions/checkout@v2
-        with:
-          repository: Kannelle-io/knl-app
-          ref: test-phets-3
-          path: knl-app
-          token: ${{ secrets.KANNELLE_PAT }}
-                 
-      - name: Checkout repo knl-sdk-ios
-        uses: actions/checkout@v2
-        with:
-          repository: Kannelle-io/knl-sdk-ios      
-          ref: 3.0.1
-          path: knl-sdk-ios  
-          token: ${{ secrets.KANNELLE_PAT }}
-
-      - name: Checkout repo knl-sdk-ios-rn
-        uses: actions/checkout@v2
-        with:
-          repository: Kannelle-io/knl-sdk-ios-rn     
-          ref: 3.0.1
-          path: knl-sdk-ios-rn 
-          token: ${{ secrets.KANNELLE_PAT }}        
+          node-version: '16'      
          
       - name: Git credentials for npm install
         run: |
@@ -70,19 +46,10 @@ jobs:
       
       - name: Setup bundle env
         run: |          
+          npm install typescript -g
           npm install typescript-bundle -g
           
       - name: Setup bundle env
         run: |          
-          cd knl-app/ios          
-          bundle install
-      
-      - name: Fastlane match
-        run: |          
-          cd knl-app/ios  
-          bundle exec fastlane match appstore --readonly
-      
-      - name: Fastlane release staging        
-        run: |          
-          cd knl-app/ios  
-          bundle exec fastlane release --env staging
+          tsc
+          tsc-bundle
