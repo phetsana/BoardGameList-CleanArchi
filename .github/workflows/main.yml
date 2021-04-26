@@ -68,8 +68,9 @@ jobs:
           REPO_URL4="https://github.com/Kannelle-io/knl-sdk-ios-rn.git"
           git config --global --add http.$REPO_URL4.extraHeader "Authorization: Basic ${{ secrets.KANNELLE_PAT_BASE64 }}" 
       
-      - name: Setup bundle env
+      - name: Setup tools
         run: |          
+          npm install react-native-cli@2.0.1 -g
           npm install typescript@3.7.5 -g
           
       - name: Setup bundle env
