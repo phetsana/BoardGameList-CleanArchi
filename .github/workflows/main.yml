@@ -58,6 +58,4 @@ jobs:
           bundle install
 
       - name: tsc compile
-        uses: iCrawl/action-tsc@v1
-        with:
-          project: knl-app/tsconfig.json
+        uses: stepek/tsc-action@master
