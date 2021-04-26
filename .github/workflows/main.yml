@@ -70,9 +70,13 @@ jobs:
       
       - name: Setup bundle env
         run: |          
+          npm install typescript-bundle -g
+          
+      - name: Setup bundle env
+        run: |          
           cd knl-app/ios          
           bundle install
-          
+      
       - name: Fastlane match
         run: |          
           cd knl-app/ios  
