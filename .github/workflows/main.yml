@@ -70,7 +70,7 @@ jobs:
       
       - name: Setup bundle env
         run: |          
-          npm install typescript -g
+          npm install typescript@3.7.5 -g
           
       - name: Setup bundle env
         run: |          
