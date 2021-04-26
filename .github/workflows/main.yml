@@ -57,6 +57,11 @@ jobs:
           cd knl-app/ios          
           bundle install
           
+      - name: Fastlane repo init
+        run: |          
+          cd knl-app/ios          
+          bundle exec fastlane repo_init
+          
       - name: Fastlane match
         run: |          
           cd knl-app/ios  
