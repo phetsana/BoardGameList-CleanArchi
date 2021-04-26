@@ -37,7 +37,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: Kannelle-io/knl-app
-          ref: test-tag-4
+          ref: test-phets-2
           path: knl-app
           token: ${{ secrets.KANNELLE_PAT }}
           
