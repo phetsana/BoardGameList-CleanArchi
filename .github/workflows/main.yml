@@ -28,15 +28,54 @@ jobs:
       - uses: actions/checkout@v2
         with:
           path: main
-
+       
       - uses: actions/setup-node@v2
         with:      
           node-version: '16'
+
+      - name: Checkout repo knl-app
+        uses: actions/checkout@v2
+        with:
+          repository: Kannelle-io/knl-app
+          ref: test-tag-4
+          path: knl-app
+          token: ${{ secrets.KANNELLE_PAT }}
+          
+      - name: Checkout repo knl-sdk-ios
+        uses: actions/checkout@v2
+        with:
+          repository: Kannelle-io/knl-sdk-ios      
+          ref: 3.0.1
+          path: knl-sdk-ios  
+          token: ${{ secrets.KANNELLE_PAT }}
+
+      - name: Checkout repo knl-sdk-ios-rn
+        uses: actions/checkout@v2
+        with:
+          repository: Kannelle-io/knl-sdk-ios-rn     
+          ref: 3.0.1
+          path: knl-sdk-ios-rn 
+          token: ${{ secrets.KANNELLE_PAT }}
           
       - name: Git credentials for npm install
         run: |
-          REPO_URL="hhtps://github.com/Kannelle-io/react-native-simple-store.git"
-          git config --global --add http.$REPO_URL.extraHeader "Authorization: Basic ${{ secrets.KANNELLE_PAT_BASE64 }}"
-          git ls-remote https://github.com/Kannelle-io/react-native-simple-store.git
-          
+          REPO_URL="https://github.com/Kannelle-io/react-native-simple-store.git"
+          git config --global --add http.$REPO_URL.extraHeader "Authorization: Basic ${{ secrets.KANNELLE_PAT_BASE64 }}" 
+          REPO_URL2="https://github.com/Kannelle-io/react-native-camera.git"
+          git config --global --add http.$REPO_URL2.extraHeader "Authorization: Basic ${{ secrets.KANNELLE_PAT_BASE64 }}" 
       
+      - name: Setup bundle env
+        run: |          
+          cd knl-app/ios          
+          bundle install
+      
+      - name: Fastlane match
+        run: |          
+          cd knl-app/ios  
+          bundle exec fastlane match appstore --readonly
+      
+      - name: Fastlane release staging        
+        run: |          
+          cd knl-app/ios  
+          bundle exec fastlane archive --env staging
+   
