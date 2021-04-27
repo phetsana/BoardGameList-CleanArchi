@@ -45,7 +45,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: Kannelle-io/knl-sdk-ios      
-          ref: 3.0.1
+          ref: 3.0.2
           path: knl-sdk-ios  
           token: ${{ secrets.KANNELLE_PAT }}
 
@@ -53,7 +53,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: Kannelle-io/knl-sdk-ios-rn     
-          ref: 3.0.1
+          ref: 3.0.2
           path: knl-sdk-ios-rn 
           token: ${{ secrets.KANNELLE_PAT }}        
          
@@ -86,4 +86,4 @@ jobs:
       - name: Fastlane release staging        
         run: |          
           cd knl-app/ios  
-          bundle exec fastlane release --env staging
+          bundle exec fastlane release --env staging --verbose
