@@ -37,7 +37,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: Kannelle-io/knl-app
-          ref: test-phets-7
+          ref: ft-scenario-native-view-ios-github-action
           path: knl-app
           token: ${{ secrets.KANNELLE_PAT }}
                  
@@ -45,7 +45,6 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: Kannelle-io/knl-sdk-ios      
-          ref: 3.0.2
           path: knl-sdk-ios  
           token: ${{ secrets.KANNELLE_PAT }}
 
@@ -53,7 +52,6 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: Kannelle-io/knl-sdk-ios-rn     
-          ref: 3.0.2
           path: knl-sdk-ios-rn 
           token: ${{ secrets.KANNELLE_PAT }}        
          
