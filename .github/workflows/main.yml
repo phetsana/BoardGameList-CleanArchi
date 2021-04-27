@@ -60,12 +60,10 @@ jobs:
       - name: Git clone knl-sdk-ios
         run: |          
           git clone https://github.com/Kannelle-io/knl-sdk-ios.git
-          echo $(ls)
           
       - name: Git clone knl-sdk-ios-rn
         run: |          
           git clone https://github.com/Kannelle-io/knl-sdk-ios-rn.git
-          echo $(ls)
    
       - name: Setup bundle env
         run: |          
