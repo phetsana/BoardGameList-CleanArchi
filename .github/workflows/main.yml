@@ -61,15 +61,15 @@ jobs:
         run: |          
           mkdir knl-sdk-ios
           cd knl-sdk-ios
-          echo $(ls)
           git clone https://github.com/Kannelle-io/knl-sdk-ios.git
+          echo $(ls)
           
       - name: Git clone knl-sdk-ios-rn
         run: |          
           mkdir knl-sdk-ios-rn
           cd knl-sdk-ios-rn
-          echo $(ls)
           git clone https://github.com/Kannelle-io/knl-sdk-ios-rn.git
+          echo $(ls)
    
       - name: Setup bundle env
         run: |          
