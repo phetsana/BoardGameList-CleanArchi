@@ -26,23 +26,18 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-        with:
-          path: main
-   
       - name: Get the version
         id: get_version
         run: echo ::set-output name=VERSION::$(echo $GITHUB_REF | cut -d / -f 3)
    
-      - name: Get the version
+      - name: Get the env
         id: get_env
         run: |
           ENV="prod"
           if [[ ${{ steps.get_version.outputs.VERSION }} == "stage" ]]; then
             ENV="stage"        
           fi
-          echo ::set-output name=ENV::ENV
+          echo ::set-output name=ENV::$ENV
    
       - name: Setup tools
         run: |          
