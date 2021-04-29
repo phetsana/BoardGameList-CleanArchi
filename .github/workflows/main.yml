@@ -35,9 +35,18 @@ jobs:
         id: get_version
         run: echo ::set-output name=VERSION::$(echo $GITHUB_REF | cut -d / -f 3)
    
+      - name: Get the version
+        id: get_env
+        run: |
+          ENV="prod"
+          if [[ ${{ steps.get_version.outputs.VERSION }} == "stage" ]]; then
+            ENV="stage"        
+          fi
+          echo ::set-output name=ENV::ENV
+   
       - name: Setup tools
         run: |          
           echo "version"
-          echo ${{ steps.get_version.outputs.VERSION }}
+          echo ${{ steps.get_env.outputs.ENV }}
           
 
