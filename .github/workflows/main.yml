@@ -35,7 +35,7 @@ jobs:
         run: |
           ENV="prod"
           if [[ ${{ steps.get_version.outputs.VERSION }} == *"stage"* ]]; then
-            ENV="stage
+            ENV="stage"
           fi
           echo ::set-output name=ENV::$ENV
    
