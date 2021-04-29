@@ -34,7 +34,7 @@ jobs:
         id: get_env
         run: |
           ENV="prod"
-          if contains(${{ steps.get_version.outputs.VERSION }}, 'stage') then
+          if ${{ contains(${{ steps.get_version.outputs.VERSION }}, 'stage') }} then
             ENV="stage
           fi
           echo ::set-output name=ENV::$ENV
